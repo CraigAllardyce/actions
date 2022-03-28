@@ -8,6 +8,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
-      - uses: ./.github/actions/setup-npm
-      - run: npm ci
-      - run: npm test
+      - run: echo $FOOBAR
+      # - uses: ./.github/actions/setup-npm
+      # - run: npm ci
+      # - run: npm test
