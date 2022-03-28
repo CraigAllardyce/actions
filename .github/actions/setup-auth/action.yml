@@ -1,11 +1,18 @@
-name: 'Setup NPM'
-description: 'Configure access to artifactory'
+name: 'Setup Authentication'
+description: 'Configure access to code'
 runs:
   using: "composite"
   steps:    
-    - name: Setup NPM
+    - name: Setup Authentication
       shell: bash
       run: |
+        'command -v ssh-agent >/dev/null || ( apt-get update -y && apt-get install openssh-client -y )'
+        eval $(ssh-agent -s)
+        echo "$SSH_PRIVATE_KEY" | base64 -d | tr -d '\r' | ssh-add -
+        mkdir -p ~/.ssh
+        chmod 700 ~/.ssh
+        echo "$SSH_KNOWN_HOSTS" >> ~/.ssh/known_hosts
+        chmod 644 ~/.ssh/known_hosts
         touch ~/.npmrc
         echo tag-version-prefix= >> ~/.npmrc
         echo @focus:registry=https://artifactory.dimensiondata.com/artifactory/api/npm/npm/ >> ~/.npmrc
