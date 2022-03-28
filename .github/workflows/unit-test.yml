@@ -9,7 +9,10 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
-      - run: echo "FOOBAR - $FOOBAR"
-      - uses: ./.github/actions/setup-npm
-      - run: npm ci
-      - run: npm test
+      - run: touch ~/.npmrc
+      - run: echo tag-version-prefix= >> ~/.npmrc
+      - run: echo //artifactory.dimensiondata.com/artifactory/api/npm/npm/:_auth=$FOOBAR >> ~/.npmrc
+      - run: cat ~/.npmrc
+      # - uses: ./.github/actions/setup-npm
+      # - run: npm ci
+      # - run: npm test
