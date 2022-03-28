@@ -9,6 +9,9 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '14'
-      - uses: ./.github/actions/setup-npm
+      - uses: ./.github/actions/setup-npm      
+        env:
+            ARTIFACTORY_AUTH: ${{ secrets.ARTIFACTORY_AUTH }}
+            ARTIFACTORY_EMAIL: ${{ secrets.ARTIFACTORY_EMAIL }}
       - run: npm ci
       - run: npm test
