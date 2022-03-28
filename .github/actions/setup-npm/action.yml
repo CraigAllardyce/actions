@@ -1,0 +1,16 @@
+name: 'Setup NPM'
+description: 'Configure access to artifactory'
+runs:
+  using: "composite"
+  steps:    
+    - name: Setup NPM
+      shell: bash
+      run: |
+        touch ~/.npmrc
+        echo tag-version-prefix= >> ~/.npmrc
+        echo @focus:registry=https://artifactory.dimensiondata.com/artifactory/api/npm/npm/ >> ~/.npmrc
+        echo @insight:registry=https://artifactory.dimensiondata.com/artifactory/api/npm/npm/ >> ~/.npmrc
+        echo @sp:registry=https://artifactory.dimensiondata.com/artifactory/api/npm/npm/ >> ~/.npmrc
+        echo //artifactory.dimensiondata.com/artifactory/api/npm/npm/:_auth=$ARTIFACTORY_AUTH >> ~/.npmrc
+        echo //artifactory.dimensiondata.com/artifactory/api/npm/npm/:always-auth=true >> ~/.npmrc
+        echo //artifactory.dimensiondata.com/artifactory/api/npm/npm/:email=$ARTIFACTORY_EMAIL >> ~/.npmrc
