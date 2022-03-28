@@ -3,6 +3,7 @@ on: [push]
 jobs:
   Unit-Test:
     runs-on: ubuntu-latest
+    environment: action
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v2
