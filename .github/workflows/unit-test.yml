@@ -12,6 +12,7 @@ jobs:
       - uses: webfactory/ssh-agent@v0.5.4
         with:
           ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      - run: echo scm.dimensiondata.com,185.3.28.79 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEDNMvCZVMIHWZuIgoXWg0zHOo6mIdPYptyK1IiYkRvr >> ~/.ssh/known_hosts
       - uses: ./.github/actions/setup-auth      
         env:
             ARTIFACTORY_AUTH: ${{ secrets.ARTIFACTORY_AUTH }}
