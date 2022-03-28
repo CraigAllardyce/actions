@@ -12,7 +12,7 @@ jobs:
       - uses: ./.github/actions/setup-auth      
         env:
             ARTIFACTORY_AUTH: ${{ secrets.ARTIFACTORY_AUTH }}
-            ARTIFACTORY_AUTH: ${{ secrets.ARTIFACTORY_AUTH }}
+            ARTIFACTORY_EMAIL: ${{ secrets.ARTIFACTORY_EMAIL }}
             SSH_KNOWN_HOSTS: ${{ secrets.SSH_KNOWN_HOSTS }}
             SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       - run: npm ci
