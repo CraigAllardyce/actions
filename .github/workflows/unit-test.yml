@@ -12,6 +12,8 @@ jobs:
       - run: touch ~/.npmrc
       - run: echo tag-version-prefix= >> ~/.npmrc
       - run: echo //artifactory.dimensiondata.com/artifactory/api/npm/npm/:_auth=$FOOBAR >> ~/.npmrc
+        env:
+          FOOBAR: ${{ secrets.FOOBAR }}
       - run: cat ~/.npmrc
       # - uses: ./.github/actions/setup-npm
       # - run: npm ci
