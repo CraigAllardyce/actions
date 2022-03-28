@@ -1,0 +1,43 @@
+{
+    "name": "actions",
+    "version": "0.0.36",
+    "description": "Basic app",
+    "main": "src/main.js",
+    "appInfo": {
+        "titleName": "Gitlab Test"
+    },
+    "dependencies": {
+        "@emotion/react": "^11.1.5",
+        "prop-types": "^15.7.2",
+        "react": "^17.0.1",
+        "react-dom": "^17.0.1",
+        "react-router-dom": "^5.2.0"
+    },
+    "devDependencies": {
+        "@insight/eslint-config": "1.0.1",
+        "@insight/prettier-config": "0.0.4",
+        "@insight/webpack-config": "1.2.0",
+        "@playwright/test": "^1.17.1",
+        "@testing-library/jest-dom": "^5.11.9",
+        "@testing-library/react": "^11.2.5",
+        "cypress": "^6.9.1",
+        "jest": "^26.6.3",
+        "jest-junit": "^12.0.0"
+    },
+    "scripts": {
+        "dev": "webpack --mode=development --watch",
+        "prod": "webpack --mode=production",
+        "lint": "eslint src/ test/ --ext .jsx,.js,.mjs",
+        "test": "jest --verbose --ci --coverage",
+        "test-dev": "jest --verbose --watch --coverage",
+        "postversion": "git push && git push --tags",
+        "test:integration": "cypress run",
+        "open:integration": "cypress open"
+    },
+    "prettier": "@insight/prettier-config",
+    "eslintConfig": {
+        "extends": [
+            "@insight"
+        ]
+    }
+}

@@ -1,2 +1,3 @@
-# actions
-Testing Actions
+# Actions
+
+Testing actions

@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render renders the component 1`] = `
+<div>
+  <div
+    class="css-1kntp3v-HelloWorld"
+  >
+    <h1
+      data-test="page-title"
+      style="color: rgb(29, 189, 69);"
+    >
+      Hello World - 24
+    </h1>
+    <div
+      class="css-absu32-HelloWorld"
+    >
+      <button
+        class="btn btn-neutral"
+        type="button"
+      >
+        Blue
+      </button>
+      <button
+        class="btn btn-neutral"
+        type="button"
+      >
+        Green
+      </button>
+      <button
+        class="btn btn-neutral"
+        type="button"
+      >
+        Yellow
+      </button>
+      <button
+        class="btn btn-neutral"
+        type="button"
+      >
+        Red
+      </button>
+    </div>
+  </div>
+</div>
+`;

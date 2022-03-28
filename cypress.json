@@ -1,0 +1,16 @@
+{
+    "reporter": "junit",
+    "viewportWidth": 1200,
+    "viewportHeight": 1400,
+    "fixturesFolder": "tests/cypress/fixtures",
+    "integrationFolder": "tests/cypress/integration",
+    "pluginsFile": "tests/cypress/plugins/index.js",
+    "supportFile": "tests/cypress/support/index.js",
+    "reporterOptions": {
+        "mochaFile": "results/cypress-report-[hash].xml",
+        "toConsole": true
+    },
+    "env": {
+        "URL": "https://focus.nflex.io/"
+    }
+}
