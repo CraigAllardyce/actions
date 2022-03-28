@@ -10,6 +10,6 @@ jobs:
         with:
           node-version: '14'
       - run: echo "FOOBAR - $FOOBAR"
-      # - uses: ./.github/actions/setup-npm
-      # - run: npm ci
-      # - run: npm test
+      - uses: ./.github/actions/setup-npm
+      - run: npm ci
+      - run: npm test
